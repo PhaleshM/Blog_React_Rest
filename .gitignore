@@ -1,0 +1,11 @@
+#evem
+/Rango
+*.txt
+*.pyc
+ReactRest/react/blogapi/node_modules
+ReactRest/django/htmlcov
+.coverage
+ReactRest/django/blog_api/migrations
+ReactRest/django/blog/migrations
+ReactRest/django/users/migrations
+!ReactRest/django/requirements.txt
