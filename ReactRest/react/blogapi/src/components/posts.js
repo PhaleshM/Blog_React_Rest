@@ -38,7 +38,6 @@ const Posts = (props) => {
 	const { posts } = props;
 	const classes = useStyles();
 	if (!posts || posts.length === 0) return <p>Can not find any posts, sorry</p>;
-	console.log("hiiiiiiiii")
 	console.log(posts)
 	return (
 		<React.Fragment>
