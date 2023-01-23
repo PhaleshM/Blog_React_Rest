@@ -6,6 +6,7 @@ from rest_framework.permissions import SAFE_METHODS, IsAuthenticated, IsAuthenti
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
+from rest_framework import filters
 
 class PostUserWritePermission(BasePermission):
     message = 'Editing posts is restricted to the author only.'
@@ -17,17 +18,70 @@ class PostUserWritePermission(BasePermission):
 
         return obj.author == request.user
 
-class PostList(viewsets.ModelViewSet):
-    permission_classes=[PostUserWritePermission]
+class PostList(generics.ListAPIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    # queryset = Post.postobjects.all()
+    serializer_class = PostSerializer
+    
+    queryset=Post.postobjects.all()
+    # def get_queryset(self):
+    #     user=self.request.user
+    #     return Post.objects.filter(author=user)
+    
+class PostDetail(generics.RetrieveAPIView):
+
+    serializer_class = PostSerializer
+
+    def get_object(self, queryset=None, **kwargs):
+        item = self.kwargs.get('pk')
+        return get_object_or_404(Post, slug=item)
+    
+class PostListDetailfilter(generics.ListAPIView):
+    queryset=Post.objects.all()
     serializer_class=PostSerializer
-    # queryset=Post.postobjects.all()
+    filter_backends=[filters.SearchFilter]
+    search_fields = ['^slug']
 
-    def get_object(self,queryser=None,**kwargs):
-        item=self.kwargs.get('pk')
-        return get_object_or_404(Post,slug=item)
+    # '^' Starts-with search.
+    # '=' Exact matches.
+    # '@' Full-text search. (Currently only supported Django's PostgreSQL backend.)
+    # '$' Regex search.
 
-    def get_queryset(self):
-        return Post.objects.all()
+# Post Admin
+
+class CreatePost(generics.CreateAPIView):
+    permission_classes=[]
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+
+class AdminPostDetal(generics.RetrieveAPIView):
+    permission_classes=[]
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+
+class EditPost(generics.UpdateAPIView):
+    permission_classes=[]
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+
+class DeletePost(generics.RetrieveDestroyAPIView):
+    permission_classes=[]
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+
+# class PostList(viewsets.ModelViewSet):
+#     permission_classes=[PostUserWritePermission]
+#     serializer_class=PostSerializer
+#     # queryset=Post.postobjects.all()
+
+#     def get_object(self,queryset=None,**kwargs):
+#         item=self.kwargs.get('pk')
+#         return get_object_or_404(Post,slug=item)
+#     
+
+#     def get_queryset(self):
+#         user=self.request.user
+#         return Post.objects.filter(author=user)
     
 # class PostList(viewsets.ViewSet):
 #     permission_classes = [IsAuthenticated]
@@ -60,16 +114,6 @@ class PostList(viewsets.ModelViewSet):
     # def destroy(self, request, pk=None):
     #     pass
 
-# class PostList(generics.ListCreateAPIView):
-#     permission_classes = [IsAuthenticatedOrReadOnly]
-#     queryset = Post.postobjects.all()
-#     serializer_class = PostSerializer
-
-
-# class PostDetail(generics.RetrieveUpdateDestroyAPIView, PostUserWritePermission):
-#     permission_classes = [PostUserWritePermission]
-#     queryset = Post.objects.all()
-#     serializer_class = PostSerializer
 
 
 """ Concrete View Classes
