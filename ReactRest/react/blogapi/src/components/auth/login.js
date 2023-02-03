@@ -68,12 +68,12 @@ export default function Login() {
 			.then((res) => {
 				localStorage.setItem('access_token', res.data.access_token);
 				localStorage.setItem('refresh_token', res.data.refresh_token);
-				// axiosInstance.defaults.headers['Authorization'] =
-				// 	'JWT ' + localStorage.getItem('access_token');
-				// history.push('/');
-				// console.log("hiiiii")
-				// console.log(res);
-				console.log(res.data);
+				axiosInstance.defaults.headers['Authorization'] =
+					'Bearer ' + localStorage.getItem('access_token');
+				history.push('/');
+				// console.log(res)
+				// console.log(res.data.refresh_token);
+				// console.log(res.data);
 			});
 	};
 
