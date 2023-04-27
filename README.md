@@ -3,8 +3,6 @@ This Blogging Project use ReactJs and DjangoRestFramework.
 ![Screenshot (352)](https://user-images.githubusercontent.com/75934126/234777914-3de0278c-46b3-4190-9dd3-a48450a5b1ae.png)
 ![Screenshot (355)](https://user-images.githubusercontent.com/75934126/234777988-8ac317e7-79a0-4776-8262-38e6f324dd36.png)
 ![Screenshot (357)](https://user-images.githubusercontent.com/75934126/234778003-27f0fea1-92df-4cae-9f04-057963457640.png)
-
-# ![Screenshot (351)](https://user-images.githubusercontent.com/75934126/234777852-7f140bda-5812-4b45-b9b4-c6b6fb70fe5c.png)
 # Blogging WebApp
 <table>
 <tr>
@@ -17,23 +15,20 @@ This Blogging Project use ReactJs and DjangoRestFramework.
 ## Site
 
 ### Landing Page
-Currently it is working on all NSE (India) Stocks, BSE (India) Stocks Symbol will be added soon.
 
-![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
+![Screenshot (351)](https://user-images.githubusercontent.com/75934126/234777852-7f140bda-5812-4b45-b9b4-c6b6fb70fe5c.png)
 
-### Query Filled Form
-![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
+### Blog Detail View
+![Screenshot (352)](https://user-images.githubusercontent.com/75934126/234777914-3de0278c-46b3-4190-9dd3-a48450a5b1ae.png)
 
-### Charts
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart1.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart2.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart3.JPG)
+### LogIn & SignUp
+![Screenshot (355)](https://user-images.githubusercontent.com/75934126/234777988-8ac317e7-79a0-4776-8262-38e6f324dd36.png)
 
 
-## Mobile support
+## Backend
 The WebApp is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
 
-![](https://iharsh234.github.io/WebApp/images/demo/mobile.png)
+![Screenshot (357)](https://user-images.githubusercontent.com/75934126/234778003-27f0fea1-92df-4cae-9f04-057963457640.png)
 
 
 
