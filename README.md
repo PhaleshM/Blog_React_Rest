@@ -1,8 +1,3 @@
-This Blogging Project use ReactJs and DjangoRestFramework.
-![Screenshot (351)](https://user-images.githubusercontent.com/75934126/234777852-7f140bda-5812-4b45-b9b4-c6b6fb70fe5c.png)
-![Screenshot (352)](https://user-images.githubusercontent.com/75934126/234777914-3de0278c-46b3-4190-9dd3-a48450a5b1ae.png)
-![Screenshot (355)](https://user-images.githubusercontent.com/75934126/234777988-8ac317e7-79a0-4776-8262-38e6f324dd36.png)
-![Screenshot (357)](https://user-images.githubusercontent.com/75934126/234778003-27f0fea1-92df-4cae-9f04-057963457640.png)
 # Blogging WebApp
 <table>
 <tr>
@@ -31,49 +26,32 @@ The WebApp is compatible with devices of all sizes and all OS's, and consistent 
 ![Screenshot (357)](https://user-images.githubusercontent.com/75934126/234778003-27f0fea1-92df-4cae-9f04-057963457640.png)
 
 
+## Getting Started
 
+To get started with development, you can use the following commands:
 
-## [Usage](https://iharsh234.github.io/WebApp/) 
+```bash
+<!-- Install Frontend dependencies -->
+npm install
 
-### Development
-Want to contribute? Great!
+<!-- Create virtual env -->
+virtualenv env_name
 
-To fix a bug or enhance an existing module, follow these steps:
+<!--Install Backend dependencies -->
+pip install -r requirements.txt
+```
 
-- Fork the repo
-- Create a new branch (`git checkout -b improve-feature`)
-- Make the appropriate changes in the files
-- Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
-- Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request 
+## Usage
 
-### Bug / Feature Request
+```python
+import foobar
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/iharsh234/WebApp/issues/new) by including your search query and the expected result.
+# returns 'words'
+foobar.pluralize('word')
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/iharsh234/WebApp/issues/new). Please include sample queries and their corresponding results.
+# returns 'geese'
+foobar.pluralize('goose')
 
-
-## Built with 
-
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Google Chart API](https://developers.google.com/chart/interactive/docs/quick_start) - Free , Rich Gallery , Customizable and Cross-browser compatible.
-- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
-
-
-## To-do
-- Add BSE (India) Symbol to the current App.
-- Decide comparison models of Stocks. (suggestions are most welcome).
-- Another WebApp, capable of comparing at least 10 stocks.
-
-## Team
-
-[![Harsh Vijay](https://avatars1.githubusercontent.com/u/12688534?v=3&s=144)](https://github.com/iharsh234)  | [![Quandl.com](https://github.com/iharsh234/WebApp/blob/master/images/quandl.jpg)](https://www.quandl.com/)
----|---
-[Harsh Vijay ](https://github.com/iharsh234) |[Quandl](https://www.quandl.com)
-
-## [License](https://github.com/iharsh234/WebApp/blob/master/LICENSE.md)
-
-MIT © [Harsh Vijay ](https://github.com/iharsh234)
-
+# returns 'phenomenon'
+foobar.singularize('phenomena')
+```
