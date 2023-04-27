@@ -43,15 +43,6 @@ pip install -r requirements.txt
 
 ## Usage
 
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+1. Create Superuser
+2. Run server
+3. npm start 
