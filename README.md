@@ -5,19 +5,14 @@ This Blogging Project use ReactJs and DjangoRestFramework.
 ![Screenshot (357)](https://user-images.githubusercontent.com/75934126/234778003-27f0fea1-92df-4cae-9f04-057963457640.png)
 
 # [Screenshot (351)](https://user-images.githubusercontent.com/75934126/234777852-7f140bda-5812-4b45-b9b4-c6b6fb70fe5c.png)
-# WebApp
+# Blogging WebApp
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+  A bloging webapp using API(DjangoRestFramework) and ReactJS.
 </td>
 </tr>
 </table>
-
-
-## Demo
-Here is a working live demo :  https://iharsh234.github.io/WebApp/
-
 
 ## Site
 
