@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axiosInstance from '../../axios';
+import axiosInstance from '../../axios/login';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 //MaterialUI
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -50,23 +51,29 @@ export default function Login() {
 		});
 	};
 
+	var qs = require('qs');
+	var data = qs.stringify({
+	'username': formData.email,
+	'password': formData.password,
+	'grant_type': 'password',
+	'client_secret': 'SGgEUJh1ev1KWNoYgz8f41kj88xAjsAbe345KIoX2iYMAdo8C6KsqLIKMjSILQqduwpuJc7vQS2nf860RpShwTbOf4h8GU0hYg4SSPlltqmMEfeKLJCTFdqUbRBBWG2q',
+	'client_id': 'hGim85AAzsNWi49IEn9OHEqxiFxU6XXW2tdNeQS1' 
+	});
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(formData);
-
 		axiosInstance
-			.post(`token/`, {
-				email: formData.email,
-				password: formData.password,
-			})
+			.post(`auth/token/`, data)
 			.then((res) => {
-				localStorage.setItem('access_token', res.data.access);
-				localStorage.setItem('refresh_token', res.data.refresh);
+				localStorage.setItem('access_token', res.data.access_token);
+				localStorage.setItem('refresh_token', res.data.refresh_token);
 				axiosInstance.defaults.headers['Authorization'] =
-					'JWT ' + localStorage.getItem('access_token');
+					'Bearer ' + localStorage.getItem('access_token');
 				history.push('/');
-				//console.log(res);
-				//console.log(res.data);
+				// console.log(res)
+				// console.log(res.data.refresh_token);
+				// console.log(res.data);
 			});
 	};
 

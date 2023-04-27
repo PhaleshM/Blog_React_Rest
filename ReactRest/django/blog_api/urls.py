@@ -2,10 +2,10 @@ from django.urls import path
 from .views import PostList, PostDetail, PostListDetailfilter, CreatePost,EditPost,DeletePost,AdminPostDetal
 from rest_framework.routers import DefaultRouter
 
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
+# from rest_framework_simplejwt.views import (
+#     TokenObtainPairView,
+#     TokenRefreshView,
+# )
 
 app_name = 'blog_api'
 

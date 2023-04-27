@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Post() {
 	const { slug } = useParams();
 	const classes = useStyles();
-
 	const [data, setData] = useState({
 		posts: [],
 	});
@@ -32,11 +31,17 @@ export default function Post() {
 			console.log(res.data);
 		});
 	}, [setData]);
+	
+	let imageStyle = {
+		color: "Black",
+		
+	 };
+	
 
 	return (
 		<Container component="main" maxWidth="md">
 			<CssBaseline />
-			<div className={classes.paper}> </div>{' '}
+			<div className={classes.paper}> </div>
 			<div className={classes.heroContent}>
 				<Container maxWidth="sm">
 					<Typography
@@ -46,18 +51,21 @@ export default function Post() {
 						color="textPrimary"
 						gutterBottom
 					>
-						{data.posts.title}{' '}
-					</Typography>{' '}
+						{data.posts.title}
+					</Typography>
 					<Typography
 						variant="h5"
 						align="center"
 						color="textSecondary"
 						paragraph
 					>
-						{data.posts.excerpt}{' '}
-					</Typography>{' '}
-				</Container>{' '}
-			</div>{' '}
+						{data.posts.excerpt}
+					</Typography>
+				</Container>
+			</div>
+			<img src={data.posts.image} style={{width:"inherit"}}/>
+			<div style={imageStyle}>{data.posts.content}</div>
+
 		</Container>
 	);
 }
